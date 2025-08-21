@@ -2,6 +2,18 @@ media/*
 !media/.keep
 !media/.gitkeep
 !media/catalogo.pdf
+# consenti file delle fragranze
+!media/fragranze/**/*.PDF
+!media/fragranze/**/*.JPG
+!media/fragranze/**/*.PNG
+!media/fragranze/**/*.webp
+!media/fragranze/**/*.WEBP
+!media/fragranze/**/*.pdf
+!media/fragranze/**/*.jpg
+!media/fragranze/**/*.png
+
+
+
 
 *.mp4
 *.mov
