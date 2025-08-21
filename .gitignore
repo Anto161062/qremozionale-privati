@@ -2,6 +2,10 @@ media/*
 !media/.keep
 !media/.gitkeep
 !media/catalogo.pdf
+
+!media/fragranze/
+!media/fragranze/**/
+
 # consenti file delle fragranze
 !media/fragranze/**/*.PDF
 !media/fragranze/**/*.JPG
@@ -11,6 +15,7 @@ media/*
 !media/fragranze/**/*.pdf
 !media/fragranze/**/*.jpg
 !media/fragranze/**/*.png
+
 
 
 
