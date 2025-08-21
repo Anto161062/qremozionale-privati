@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QR Emozionale — Profumi</title>
+<title>Sapientia — QR Emozionale</title>
 
 <style>
 :root{
@@ -12,7 +12,7 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
-background:var(--bg);color:var(--text)}
+background:var(--bg);color:#eaf2ff}
 .container{max-width:980px;margin:0 auto;padding:24px}
 h1{font-size:clamp(28px,4.8vw,44px);margin:0 0 8px}
 h2{font-size:clamp(22px,3.2vw,30px);margin:24px 0 12px}
@@ -29,7 +29,6 @@ background:linear-gradient(180deg,#14307a,#0f255f);cursor:pointer;text-decoratio
 a{color:#8ecaff}
 footer{padding:24px 0;color:#a7b7ff;border-top:1px solid var(--border);margin-top:32px}
 .badge{display:inline-block;padding:4px 8px;border:1px solid var(--border);background:rgba(96,165,250,.15);border-radius:999px;font-size:12px}
-/* gallery */
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .gallery img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer}
 .lightbox{position:fixed;inset:0;background:rgba(3,8,20,.9);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
@@ -39,27 +38,60 @@ footer{padding:24px 0;color:#a7b7ff;border-top:1px solid var(--border);margin-to
 
 </head><body>
 <div class="container">
+  <a href="catalogo.html" class="small">← Torna alle fragranze</a>
+
   <section class="hero">
-    <h1>Un’etichetta che racconta il profumo</h1>
-    <p>Qui trovi <strong>note</strong>, <strong>video</strong> e <strong>consigli d’uso</strong> del tuo profumo.</p>
+    <h1>Sapientia</h1>
+    <p>Profondità e calma. Favorisce la riflessione e la concentrazione.</p>
     <div class="cta">
-      <a class="btn" href="catalogo.html">Scopri le fragranze</a>
-      <a class="btn ghost" href="offerta.html">Offerta del weekend</a>
-      <a class="btn" href="https://wa.me/393717771328?text=Ciao%20Anto,%20voglio%20info%20sulle%20fragranze">Scrivimi su WhatsApp</a>
+      <button class="btn" id="playAudio">Ascolta 10s di atmosfera</button>
+      <a class="btn" href="media/fragranze/sapientia/scheda.pdf" target="_blank">Apri scheda PDF</a>
+      <a class="btn ghost" href="https://wa.me/393717771328?text=Ciao%20Anto,%20voglio%20info%20su%20Sapientia">WhatsApp</a>
     </div>
   </section>
 
   <section>
-    <h2>Cosa trovi qui</h2>
+    <h2>Galleria</h2>
     <div class="card">
-      <ul>
-        <li><strong>Note & sensazioni</strong> di ogni fragranza.</li>
-        <li><strong>Consigli d’uso</strong>: bastoncini, tessuti, bucato.</li>
-        <li><strong>Novità e offerte</strong> aggiornate spesso.</li>
-      </ul>
+      <div class="gallery">
+        <img src="media/fragranze/sapientia/1.jpg" alt="Sapientia foto 1" onerror="this.style.display='none'">
+        <img src="media/fragranze/sapientia/2.jpg" alt="Sapientia foto 2" onerror="this.style.display='none'">
+        <img src="media/fragranze/sapientia/3.jpg" alt="Sapientia scheda" onerror="this.style.display='none'">
+      </div>
+      <p class="small">Immagini in <code>media/fragranze/sapientia/</code> (1.jpg principale, 2.jpg extra, 3.jpg scheda mobile).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Video (opzionale)</h2>
+    <div class="card">
+      <video id="vid" src="media/fragranze/sapientia/demo.mp4" controls playsinline onerror="this.style.display='none'"></video>
+      <p class="small">Se aggiungi <code>demo.mp4</code> nella stessa cartella, appare qui.</p>
     </div>
   </section>
 
   <footer>© MySenza – QR Emozionale™</footer>
 </div>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<audio id="ambience" src="media/fragranze/sapientia/audio.mp3" preload="none"></audio>
+<script>
+// Lightbox
+const lb = document.getElementById('lightbox');
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    lb.querySelector('img').src = img.src;
+    lb.classList.add('show');
+  });
+});
+lb.addEventListener('click', () => lb.classList.remove('show'));
+document.addEventListener('keydown', e => e.key==='Escape' && lb.classList.remove('show'));
+
+// Audio on click
+const audio = document.getElementById('ambience');
+document.getElementById('playAudio').addEventListener('click', () => {
+  if (audio.paused) { audio.play().catch(()=>{}); }
+  else { audio.pause(); audio.currentTime = 0; }
+});
+</script>
 </body></html>
