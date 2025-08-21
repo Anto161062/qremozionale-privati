@@ -1,0 +1,15 @@
+ni .gitignore -ItemType File -Force
+@"
+media/*
+!media/.keep
+!media/.gitkeep
+
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.zip
+*.psd
+*.ai
+"@ | Set-Content .gitignore -Encoding UTF8
