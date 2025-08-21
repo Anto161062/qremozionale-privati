@@ -8,48 +8,54 @@
   --bg: radial-gradient(1200px 800px at 15% 10%, rgba(37,99,235,.35), transparent 42%),
         radial-gradient(1000px 600px at 85% 90%, rgba(59,130,246,.28), transparent 45%),
         linear-gradient(180deg,#050b1a 0%, #0a1433 100%);
-  --card:#0d1b3f;
-  --muted:#a7b7ff;
-  --text:#eaf2ff;
-  --accent:#60a5fa;
-  --border:#13306b;
+  --border:#13306b; --text:#eaf2ff;
 }
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
-background:var(--bg);color:#eaf2ff;}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+background:var(--bg);color:var(--text)}
 .container{max-width:980px;margin:0 auto;padding:24px}
 h1{font-size:clamp(28px,4.8vw,44px);margin:0 0 8px}
-h2{font-size:clamp(22px,3.2vw,30px);margin:24px 0 12px;color:#f6f8ff}
-.small{font-size:14px;opacity:.85}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:linear-gradient(180deg, rgba(13,27,63,.92), rgba(13,27,63,.88));border:1px solid var(--border);
-border-radius:16px;padding:16px;box-shadow:0 10px 24px rgba(0,0,0,.4)}
+h2{font-size:clamp(22px,3.2vw,30px);margin:24px 0 12px}
+.small{font-size:14px;opacity:.85;margin:8px 0}
+.hero{display:grid;gap:14px;padding:22px;border:1px solid var(--border);border-radius:16px;
+background:linear-gradient(180deg, rgba(96,165,250,.18), rgba(37,99,235,.12));box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--border);
-background:linear-gradient(180deg,#14307a,#0f255f);cursor:pointer;text-decoration:none;color:#eaf2ff;
-box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 6px 14px rgba(0,0,0,.35)}
+background:linear-gradient(180deg,#14307a,#0f255f);cursor:pointer;text-decoration:none;color:#eaf2ff}
+.btn.ghost{background:rgba(15,37,95,.6)}
+.card{background:rgba(13,27,63,.9);border:1px solid var(--border);border-radius:16px;padding:16px;margin:16px 0}
+.grid{display:grid;gap:14px}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+a{color:#8ecaff}
+footer{padding:24px 0;color:#a7b7ff;border-top:1px solid var(--border);margin-top:32px}
 .badge{display:inline-block;padding:4px 8px;border:1px solid var(--border);background:rgba(96,165,250,.15);border-radius:999px;font-size:12px}
-a{color:#60a5fa}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer}
+.lightbox{position:fixed;inset:0;background:rgba(3,8,20,.9);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+.lightbox img, .lightbox video{max-width:92vw;max-height:86vh;border-radius:16px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lightbox.show{display:flex}
 </style>
 
 </head><body>
 <div class="container">
   <a href="index.html" class="small">← Torna alla home</a>
   <h1>Fragranze</h1>
-  <p class="small">Qui trovi l'elenco delle fragranze. Il PDF del catalogo può stare in <code>media/catalogo.pdf</code> (quando pronto) o su un link esterno.</p>
+  <p class="small">Clicca su una fragranza per aprire la scheda dettagliata. In fondo trovi il <strong>catalogo PDF</strong>.</p>
 
-  <div class="grid">
-    <div class="card"><strong>Vigna Rossa</strong><br><span class="small">Calore e intimità. Rende l’ambiente accogliente e intimo.</span></div>
-    <div class="card"><strong>Citri Fructus</strong><br><span class="small">Energia e freschezza. Ideale per spazi vivaci: stimola la produttività e mantiene alta la vitalità.</span></div>
-    <div class="card"><strong>Lavanda e Menta</strong><br><span class="small">Serenità e leggerezza. Unisce la calma della lavanda alla freschezza della menta.</span></div>
-    <div class="card"><strong>Sapientia</strong><br><span class="small">Profondità e calma. Favorisce la riflessione e la concentrazione.</span></div>
-    <div class="card"><strong>Vaniglia Nera</strong><br><span class="small">Raffinatezza e dolcezza. Unisce calore e lusso.</span></div>
+  <div class="grid cols-3">
+    <a class="card" href="vigna-rossa.html"><strong>Vigna Rossa</strong><br><span class="small">Calore e intimità. Rende l’ambiente accogliente e intimo.</span></a>
+    <a class="card" href="citri-fructus.html"><strong>Citri Fructus</strong><br><span class="small">Energia e freschezza. Stimola la produttività e mantiene alta la vitalità.</span></a>
+    <a class="card" href="lavanda-menta.html"><strong>Lavanda e Menta</strong><br><span class="small">Serenità e leggerezza. La calma della lavanda con la freschezza della menta.</span></a>
+    <a class="card" href="sapientia.html"><strong>Sapientia</strong><br><span class="small">Profondità e calma. Favorisce la riflessione e la concentrazione.</span></a>
+    <a class="card" href="vaniglia-nera.html"><strong>Vaniglia Nera</strong><br><span class="small">Raffinatezza e dolcezza. Unisce calore e lusso.</span></a>
+    <a class="card" href="bucato-03-03-fiori.html"><strong>03‑03 · Fiori (Bucato)</strong><br><span class="small">Intenso e persistente. Dopo il lavaggio la casa profuma di fiori. Disponibile anche spray a base acqua.</span></a>
   </div>
 
-  <div class="card" style="margin-top:20px">
+  <div class="card">
     <h2>Scarica il catalogo <span class="badge">PDF</span></h2>
     <p><a class="btn" href="media/catalogo.pdf">Apri PDF</a></p>
-    <p class="small">Se non vuoi caricare il PDF in repo, metti qui un link Drive/Dropbox pubblico.</p>
   </div>
 
-  <footer style="margin-top:32px">© MySenza – QR Emozionale™</footer>
+  <footer>© MySenza – QR Emozionale™</footer>
 </div>
 </body></html>
