@@ -1,8 +1,7 @@
-ni .gitignore -ItemType File -Force
-@"
 media/*
 !media/.keep
 !media/.gitkeep
+!media/catalogo.pdf
 
 *.mp4
 *.mov
@@ -12,4 +11,3 @@ media/*
 *.zip
 *.psd
 *.ai
-"@ | Set-Content .gitignore -Encoding UTF8
