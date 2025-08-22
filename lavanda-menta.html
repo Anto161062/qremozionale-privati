@@ -4,12 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lavanda e Menta – MySenza · QR Emozionale</title>
+
   <style>
     body{margin:0;background:#071426;color:#e9eef7;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .container{max-width:1100px;margin:0 auto;padding:16px}
     .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 20px;backdrop-filter: blur(4px)}
     .row{display:flex;flex-wrap:wrap;gap:10px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);text-decoration:none;color:#e9eef7}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px; border-radius:999px; border:1px solid transparent;
+  font-weight:700; box-shadow:0 8px 22px rgba(0,0,0,.35); cursor:pointer;
+  transition:.2s; background:transparent; color:inherit;
+}
+button.btn{
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-appearance: none; appearance: none;
+  border:1px solid rgba(255,255,255,.2);
+  color:#e9eef7 !important;
+}
+
     .btn-ghost{background:transparent}
     .btn:focus{outline:2px solid rgba(255,255,255,.35);outline-offset:2px}
     .muted{opacity:.75}
@@ -20,22 +35,26 @@
     .gallery-grid a{position:relative;display:block;padding-top:100%;border-radius:14px;overflow:hidden;background:#0b1b33;border:1px solid rgba(255,255,255,.08)}
     .gallery-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   </style>
+
 </head>
 <body>
   <div class="container">
-    <a class="back" href="index.html#lavanda-menta">← Torna alle fragranze</a>
+    <a class="back" href="index.html#collezione">← Torna alle fragranze</a>
     <section class="card">
       <h1>Lavanda e Menta</h1>
       <div class="row" style="margin-top:8px">
         <button id="playAudio" class="btn" type="button">Ascolta 10s di atmosfera</button>
         <a class="btn" href="media/fragranze/lavanda-menta/scheda.pdf" target="_blank" rel="noopener">Apri scheda PDF</a>
-        <a class="btn btn-ghost" href="https://wa.me/393717771328">WhatsApp</a>
+        <a class="btn btn-ghost" href="media/catalogo.pdf" target="_blank" rel="noopener">Catalogo generale</a>
+        <a class="btn btn-ghost" href="https://wa.me/393717771328" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </section>
     <div class="spacer"></div>
+
     <section class="card">
       <h2>Galleria</h2>
       <p class="muted" style="margin:6px 0 12px">Immagini in <code>media/fragranze/lavanda-menta/</code> (1.jpg principale, 2–4 opzionali).</p>
+
       <div class="gallery-grid">
         <a href="media/fragranze/lavanda-menta/1.jpg"><img src="media/fragranze/lavanda-menta/1.jpg" alt="Lavanda e Menta" loading="lazy" onerror="this.parentElement.remove()"></a>
         <a href="media/fragranze/lavanda-menta/2.jpg"><img src="media/fragranze/lavanda-menta/2.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()"></a>
@@ -43,9 +62,11 @@
         <a href="media/fragranze/lavanda-menta/4.jpg"><img src="media/fragranze/lavanda-menta/4.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()"></a>
       </div>
     </section>
+
     <div class="spacer"></div>
     <footer class="muted">© MySenza — QR Emozionale™</footer>
   </div>
+
   <script>
     (function(){
       const b=document.getElementById('playAudio');

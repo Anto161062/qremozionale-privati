@@ -11,9 +11,23 @@
     .card{background:linear-gradient(180deg,#131a2c,#0f1524); border:1px solid #1f2a46; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
     h1{margin:0 0 10px} .muted{color:var(--muted)}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid transparent;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px; border-radius:999px; border:1px solid transparent;
+  font-weight:700; box-shadow:0 8px 22px rgba(0,0,0,.35); cursor:pointer;
+  transition:.2s; background:transparent; color:inherit;
+}
+button.btn{
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-appearance: none; appearance: none;
+  border:1px solid rgba(255,255,255,.2);
+  color:#e9eef7 !important;
+}
+
     .btn-primary{background:linear-gradient(135deg, var(--accent), #7cc0ff); color:#061021}
-    .btn-secondary{background:#1a2237;border-color:#2b3754;color:#e9eef7;text-decoration:none}
+    .btn-secondary{background:#1a2237;border-color:#2b3754}
     a{text-decoration:none;color:inherit}
   </style>
 </head>
@@ -27,8 +41,10 @@
         <li>Se acquisti un profumo ambiente da <strong>500 ml</strong> → in omaggio un 500 ml, oppure due 200 ml, oppure un bucato 500 ml.</li>
       </ul>
       <div class="cta">
-        <a class="btn btn-primary" target="_blank" href="https://wa.me/393717771328?text=Ciao%20MySenza%2C%20voglio%20attivare%20l%27offerta%20del%20weekend">Attiva via WhatsApp</a>
+        <a class="btn btn-primary" target="_blank"
+           href="https://wa.me/393717771328?text=Ciao%20MySenza%2C%20voglio%20attivare%20l%27offerta%20del%20weekend">Attiva via WhatsApp</a>
         <a class="btn btn-secondary" href="index.html">Torna alla Home</a>
+        <a class="btn btn-secondary" href="media/catalogo.pdf" target="_blank" rel="noopener">Catalogo generale (PDF)</a>
       </div>
     </div>
   </main>

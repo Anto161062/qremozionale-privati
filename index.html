@@ -5,60 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MySenza – Sistema Demo Regali</title>
   <style>
-    :root{
-      --bg:#0b0f1a; /* blu notte */
-      --fg:#e9eef7; /* testo chiaro */
-      --muted:#9aa7bd;
-      --accent:#4da3ff; /* blu elettrico */
-      --card:#121726;
-      --shadow:0 8px 22px rgba(0,0,0,.35);
-      --radius:18px;
-    }
+    :root{--bg:#0b0f1a;--fg:#e9eef7;--muted:#9aa7bd;--accent:#4da3ff;--card:#121726;--shadow:0 8px 22px rgba(0,0,0,.35);--radius:18px;}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--fg); background:radial-gradient(1200px 600px at 80% -20%, #14203b 0%, rgba(20,32,59,0) 60%), var(--bg);}    
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--fg);
+          background:radial-gradient(1200px 600px at 80% -20%, #14203b 0%, rgba(20,32,59,0) 60%), var(--bg);}
     a{color:inherit; text-decoration:none}
     .wrap{max-width:1100px; margin:auto; padding:24px}
-
-    /* HERO */
     .hero{padding:56px 0 24px}
     .h-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
     .headline{font-size:clamp(28px,4vw,44px); line-height:1.1; font-weight:800; letter-spacing:.2px}
     .sub{margin-top:14px; color:var(--muted); font-size:clamp(16px,2vw,18px)}
     .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border-radius:999px; border:1px solid transparent; font-weight:700; box-shadow:var(--shadow); cursor:pointer; transition:.2s; background:transparent; color:inherit}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px; border-radius:999px; border:1px solid transparent;
+  font-weight:700; box-shadow:0 8px 22px rgba(0,0,0,.35); cursor:pointer;
+  transition:.2s; background:transparent; color:inherit;
+}
+button.btn{
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-appearance: none; appearance: none;
+  border:1px solid rgba(255,255,255,.2);
+  color:#e9eef7 !important;
+}
+
     .btn-primary{background:linear-gradient(135deg, var(--accent), #7cc0ff); color:#061021}
     .btn-secondary{background:#1a2237; border-color:#2b3754}
     .btn:hover{transform:translateY(-2px)}
     .hero-card{background:linear-gradient(180deg,#131a2c,#0f1524); border:1px solid #1f2a46; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
     .hero-card h3{margin:8px 0 6px; font-size:18px}
     .hero-card p{margin:0; color:var(--muted); font-size:14px}
-
-    /* SECTION TITLES */
     .section-title{margin:34px 0 12px; font-size:22px; font-weight:800; letter-spacing:.4px}
     .muted{color:var(--muted)}
-
-    /* CARDS – FRAGRANZE */
     .cards{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
     .card{background:var(--card); border:1px solid #1e2742; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
     .card .cover{aspect-ratio:4/3; background:#0e1426; display:grid; place-items:center; position:relative}
     .card .cover img{width:100%; height:100%; object-fit:cover}
-    .ph{position:absolute; inset:0; display:grid; place-items:center; font-size:13px; color:var(--muted)}
     .card .body{padding:14px 14px 16px}
     .card h4{margin:0 0 6px; font-size:18px}
     .card p{margin:0 0 10px; color:var(--muted); font-size:14px}
     .chip{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#18213a; border:1px solid #253255; color:#9fb6e4}
     .card .actions{display:flex; gap:10px; margin-top:12px}
     .mini{font-size:13px; padding:9px 12px}
-
-    /* RESPONSIVE */
-    @media (max-width: 900px){
-      .h-grid{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 620px){
-      .cards{grid-template-columns:1fr}
-    }
+    @media (max-width: 900px){ .h-grid{grid-template-columns:1fr} .cards{grid-template-columns:1fr 1fr} }
+    @media (max-width: 620px){ .cards{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -91,7 +84,6 @@
     <p class="muted" style="margin-top:-6px">Le card aprono la <em>propria</em> pagina dedicata. I riquadri mancanti in galleria si nascondono da soli.</p>
 
     <section class="cards" aria-label="Lista fragranze">
-      <!-- CARD – VIGNA ROSSA -->
       <article class="card" id="vigna-rossa">
         <a href="vigna-rossa.html" class="cover">
           <img src="media/fragranze/vigna-rossa/1.jpg" alt="Vigna Rossa" loading="lazy">
@@ -107,10 +99,10 @@
         </div>
       </article>
 
-      <!-- CARD – VANIGLIA NERA -->
       <article class="card" id="vaniglia-nera">
         <a href="vaniglia-nera.html" class="cover">
-          <img src="media/fragranze/vaniglia-nera/1.jpg" alt="Vaniglia Nera" loading="lazy" onerror="this.src='media/fragranze/vaniglia-nera/vaniglia-nera.jpg'; this.onerror=null;">
+          <img src="media/fragranze/vaniglia-nera/1.jpg" alt="Vaniglia Nera" loading="lazy"
+               onerror="this.src='media/fragranze/vaniglia-nera/vaniglia-nera.jpg'; this.onerror=null;">
         </a>
         <div class="body">
           <h4>Vaniglia Nera</h4>
@@ -123,7 +115,6 @@
         </div>
       </article>
 
-      <!-- CARD – CITRI FRUCTUS -->
       <article class="card" id="citri-fructus">
         <a href="citri-fructus.html" class="cover">
           <img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus" loading="lazy">
@@ -139,7 +130,6 @@
         </div>
       </article>
 
-      <!-- CARD – LAVANDA E MENTA -->
       <article class="card" id="lavanda-menta">
         <a href="lavanda-menta.html" class="cover">
           <img src="media/fragranze/lavanda-menta/1.jpg" alt="Lavanda e Menta" loading="lazy">
@@ -155,7 +145,6 @@
         </div>
       </article>
 
-      <!-- CARD – SAPIENTIA -->
       <article class="card" id="sapientia">
         <a href="sapientia.html" class="cover">
           <img src="media/fragranze/sapientia/1.jpg" alt="Sapientia" loading="lazy">
@@ -171,7 +160,6 @@
         </div>
       </article>
 
-      <!-- CARD – BUCATO 03 – FIORI -->
       <article class="card" id="bucato-03-03-fiori">
         <a href="bucato-03-03-fiori.html" class="cover">
           <img src="media/fragranze/bucato-03-03-fiori/1.jpg" alt="03 – Fiori" loading="lazy">
