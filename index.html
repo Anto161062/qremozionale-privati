@@ -6,19 +6,21 @@
   <title>MySenza – Sistema Demo Regali</title>
   <style>
     :root{
-      --bg:#0b0f1a;
-      --fg:#e9eef7;
+      --bg:#0b0f1a; /* blu notte */
+      --fg:#e9eef7; /* testo chiaro */
       --muted:#9aa7bd;
-      --accent:#4da3ff;
+      --accent:#4da3ff; /* blu elettrico */
       --card:#121726;
       --shadow:0 8px 22px rgba(0,0,0,.35);
       --radius:18px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--fg); background:radial-gradient(1200px 600px at 80% -20%, #14203b 0%, rgba(20,32,59,0) 60%), var(--bg);}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--fg); background:radial-gradient(1200px 600px at 80% -20%, #14203b 0%, rgba(20,32,59,0) 60%), var(--bg);}    
     a{color:inherit; text-decoration:none}
     .wrap{max-width:1100px; margin:auto; padding:24px}
+
+    /* HERO */
     .hero{padding:56px 0 24px}
     .h-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
     .headline{font-size:clamp(28px,4vw,44px); line-height:1.1; font-weight:800; letter-spacing:.2px}
@@ -31,8 +33,12 @@
     .hero-card{background:linear-gradient(180deg,#131a2c,#0f1524); border:1px solid #1f2a46; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
     .hero-card h3{margin:8px 0 6px; font-size:18px}
     .hero-card p{margin:0; color:var(--muted); font-size:14px}
+
+    /* SECTION TITLES */
     .section-title{margin:34px 0 12px; font-size:22px; font-weight:800; letter-spacing:.4px}
     .muted{color:var(--muted)}
+
+    /* CARDS – FRAGRANZE */
     .cards{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
     .card{background:var(--card); border:1px solid #1e2742; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
     .card .cover{aspect-ratio:4/3; background:#0e1426; display:grid; place-items:center; position:relative}
@@ -44,8 +50,15 @@
     .chip{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#18213a; border:1px solid #253255; color:#9fb6e4}
     .card .actions{display:flex; gap:10px; margin-top:12px}
     .mini{font-size:13px; padding:9px 12px}
-    @media (max-width: 900px){ .h-grid{grid-template-columns:1fr} .cards{grid-template-columns:1fr 1fr} }
-    @media (max-width: 620px){ .cards{grid-template-columns:1fr} }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px){
+      .h-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .cards{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -75,8 +88,11 @@
 
   <main class="wrap">
     <h2 id="collezione" class="section-title">Collezione</h2>
-    <section class="cards">
-      <article class="card">
+    <p class="muted" style="margin-top:-6px">Le card aprono la <em>propria</em> pagina dedicata. I riquadri mancanti in galleria si nascondono da soli.</p>
+
+    <section class="cards" aria-label="Lista fragranze">
+      <!-- CARD – VIGNA ROSSA -->
+      <article class="card" id="vigna-rossa">
         <a href="vigna-rossa.html" class="cover">
           <img src="media/fragranze/vigna-rossa/1.jpg" alt="Vigna Rossa" loading="lazy">
         </a>
@@ -91,7 +107,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <!-- CARD – VANIGLIA NERA -->
+      <article class="card" id="vaniglia-nera">
         <a href="vaniglia-nera.html" class="cover">
           <img src="media/fragranze/vaniglia-nera/1.jpg" alt="Vaniglia Nera" loading="lazy" onerror="this.src='media/fragranze/vaniglia-nera/vaniglia-nera.jpg'; this.onerror=null;">
         </a>
@@ -106,7 +123,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <!-- CARD – CITRI FRUCTUS -->
+      <article class="card" id="citri-fructus">
         <a href="citri-fructus.html" class="cover">
           <img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus" loading="lazy">
         </a>
@@ -121,7 +139,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <!-- CARD – LAVANDA E MENTA -->
+      <article class="card" id="lavanda-menta">
         <a href="lavanda-menta.html" class="cover">
           <img src="media/fragranze/lavanda-menta/1.jpg" alt="Lavanda e Menta" loading="lazy">
         </a>
@@ -136,7 +155,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <!-- CARD – SAPIENTIA -->
+      <article class="card" id="sapientia">
         <a href="sapientia.html" class="cover">
           <img src="media/fragranze/sapientia/1.jpg" alt="Sapientia" loading="lazy">
         </a>
@@ -151,7 +171,8 @@
         </div>
       </article>
 
-      <article class="card">
+      <!-- CARD – BUCATO 03 – FIORI -->
+      <article class="card" id="bucato-03-03-fiori">
         <a href="bucato-03-03-fiori.html" class="cover">
           <img src="media/fragranze/bucato-03-03-fiori/1.jpg" alt="03 – Fiori" loading="lazy">
         </a>
