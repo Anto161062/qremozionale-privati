@@ -1,97 +1,57 @@
 <!doctype html>
-<html lang="it"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Citri Fructus — QR Emozionale</title>
-
-<style>
-:root{
-  --bg: radial-gradient(1200px 800px at 15% 10%, rgba(37,99,235,.35), transparent 42%),
-        radial-gradient(1000px 600px at 85% 90%, rgba(59,130,246,.28), transparent 45%),
-        linear-gradient(180deg,#050b1a 0%, #0a1433 100%);
-  --border:#13306b; --text:#eaf2ff;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
-background:var(--bg);color:#eaf2ff}
-.container{max-width:980px;margin:0 auto;padding:24px}
-h1{font-size:clamp(28px,4.8vw,44px);margin:0 0 8px}
-h2{font-size:clamp(22px,3.2vw,30px);margin:24px 0 12px}
-.small{font-size:14px;opacity:.85;margin:8px 0}
-.hero{display:grid;gap:14px;padding:22px;border:1px solid var(--border);border-radius:16px;
-background:linear-gradient(180deg, rgba(96,165,250,.18), rgba(37,99,235,.12));box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.cta{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--border);
-background:linear-gradient(180deg,#14307a,#0f255f);cursor:pointer;text-decoration:none;color:#eaf2ff}
-.btn.ghost{background:rgba(15,37,95,.6)}
-.card{background:rgba(13,27,63,.9);border:1px solid var(--border);border-radius:16px;padding:16px;margin:16px 0}
-.grid{display:grid;gap:14px}
-.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-a{color:#8ecaff}
-footer{padding:24px 0;color:#a7b7ff;border-top:1px solid var(--border);margin-top:32px}
-.badge{display:inline-block;padding:4px 8px;border:1px solid var(--border);background:rgba(96,165,250,.15);border-radius:999px;font-size:12px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.gallery img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer}
-.lightbox{position:fixed;inset:0;background:rgba(3,8,20,.9);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
-.lightbox img, .lightbox video{max-width:92vw;max-height:86vh;border-radius:16px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.lightbox.show{display:flex}
-</style>
-
-</head><body>
-<div class="container">
-  <a href="catalogo.html" class="small">← Torna alle fragranze</a>
-
-  <section class="hero">
-    <h1>Citri Fructus</h1>
-    <p>Energia e freschezza. Ideale per spazi vivaci: stimola la produttività e mantiene alta la vitalità.</p>
-    <div class="cta">
-      <button class="btn" id="playAudio">Ascolta 10s di atmosfera</button>
-      <a class="btn" href="media/fragranze/citri-fructus/scheda.pdf" target="_blank">Apri scheda PDF</a>
-      <a class="btn ghost" href="https://wa.me/393717771328?text=Ciao%20Anto,%20voglio%20info%20su%20Citri%20Fructus">WhatsApp</a>
-    </div>
-  </section>
-
-  <section>
-    <h2>Galleria</h2>
-    <div class="card">
-      <div class="gallery">
-        <img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus foto 1" onerror="this.style.display='none'">
-        <img src="media/fragranze/citri-fructus/2.jpg" alt="Citri Fructus foto 2" onerror="this.style.display='none'">
-        <img src="media/fragranze/citri-fructus/3.jpg" alt="Citri Fructus scheda" onerror="this.style.display='none'">
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Citri Fructus – MySenza · QR Emozionale</title>
+  <style>
+    body{margin:0;background:#071426;color:#e9eef7;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .container{max-width:1100px;margin:0 auto;padding:16px}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 20px;backdrop-filter: blur(4px)}
+    .row{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);text-decoration:none;color:#e9eef7}
+    .btn-ghost{background:transparent}
+    .btn:focus{outline:2px solid rgba(255,255,255,.35);outline-offset:2px}
+    .muted{opacity:.75}
+    a.back{display:inline-block;margin:10px 0 6px;text-decoration:none;color:#9fc1ff}
+    .spacer{height:14px}
+    .gallery-grid{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(min-width:640px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
+    .gallery-grid a{position:relative;display:block;padding-top:100%;border-radius:14px;overflow:hidden;background:#0b1b33;border:1px solid rgba(255,255,255,.08)}
+    .gallery-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html#citri-fructus">← Torna alle fragranze</a>
+    <section class="card">
+      <h1>Citri Fructus</h1>
+      <div class="row" style="margin-top:8px">
+        <button id="playAudio" class="btn" type="button">Ascolta 10s di atmosfera</button>
+        <a class="btn" href="media/fragranze/citri-fructus/scheda.pdf" target="_blank" rel="noopener">Apri scheda PDF</a>
+        <a class="btn btn-ghost" href="https://wa.me/393717771328">WhatsApp</a>
       </div>
-      <p class="small">Immagini in <code>media/fragranze/citri-fructus/</code> (1.jpg principale, 2.jpg extra, 3.jpg scheda mobile).</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Video (opzionale)</h2>
-    <div class="card">
-      <video id="vid" src="media/fragranze/citri-fructus/demo.mp4" controls playsinline onerror="this.style.display='none'"></video>
-      <p class="small">Se aggiungi <code>demo.mp4</code> nella stessa cartella, appare qui.</p>
-    </div>
-  </section>
-
-  <footer>© MySenza – QR Emozionale™</footer>
-</div>
-
-<div class="lightbox" id="lightbox"><img alt=""></div>
-<audio id="ambience" src="media/fragranze/citri-fructus/audio.mp3" preload="none"></audio>
-<script>
-// Lightbox
-const lb = document.getElementById('lightbox');
-document.querySelectorAll('.gallery img').forEach(img => {
-  img.addEventListener('click', () => {
-    lb.querySelector('img').src = img.src;
-    lb.classList.add('show');
-  });
-});
-lb.addEventListener('click', () => lb.classList.remove('show'));
-document.addEventListener('keydown', e => e.key==='Escape' && lb.classList.remove('show'));
-
-// Audio on click
-const audio = document.getElementById('ambience');
-document.getElementById('playAudio').addEventListener('click', () => {
-  if (audio.paused) { audio.play().catch(()=>{}); }
-  else { audio.pause(); audio.currentTime = 0; }
-});
-</script>
-</body></html>
+    </section>
+    <div class="spacer"></div>
+    <section class="card">
+      <h2>Galleria</h2>
+      <p class="muted" style="margin:6px 0 12px">Immagini in <code>media/fragranze/citri-fructus/</code> (1.jpg principale, 2–4 opzionali).</p>
+      <div class="gallery-grid">
+        <a href="media/fragranze/citri-fructus/1.jpg"><img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus" loading="lazy" onerror="this.parentElement.remove()"></a>
+        <a href="media/fragranze/citri-fructus/2.jpg"><img src="media/fragranze/citri-fructus/2.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()"></a>
+        <a href="media/fragranze/citri-fructus/3.jpg"><img src="media/fragranze/citri-fructus/3.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()"></a>
+        <a href="media/fragranze/citri-fructus/4.jpg"><img src="media/fragranze/citri-fructus/4.jpg" alt="" loading="lazy" onerror="this.parentElement.remove()"></a>
+      </div>
+    </section>
+    <div class="spacer"></div>
+    <footer class="muted">© MySenza — QR Emozionale™</footer>
+  </div>
+  <script>
+    (function(){
+      const b=document.getElementById('playAudio');
+      const a=new Audio('media/fragranze/citri-fructus/atmo.mp3');
+      b.addEventListener('click',async()=>{try{a.currentTime=0;await a.play();}catch{alert('Audio non disponibile');}});
+    })();
+  </script>
+</body>
+</html>

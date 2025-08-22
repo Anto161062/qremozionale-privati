@@ -1,0 +1,44 @@
+Elenco del percorso delle cartelle per il volume Windows
+Numero di serie del volume: 263F-EA6A
+C:.
+¦   .gitignore
+¦   bucato-03-03-fiori.html
+¦   catalogo.html
+¦   citri-fructus.html
+¦   index.html
+¦   lavanda-menta.html
+¦   offerta.html
+¦   sapientia.html
+¦   struttura.txt
+¦   vaniglia-nera.html
+¦   vigna-rossa.html
+¦   
++---media
+    ¦   .keep
+    ¦   catalogo.pdf
+    ¦   
+    +---fragranze
+        +---bucato-03-03-fiori
+        ¦       1.jpg
+        ¦       scheda.pdf
+        ¦       
+        +---citri-fructus
+        ¦       1.jpg
+        ¦       scheda.pdf
+        ¦       
+        +---lavanda-menta
+        ¦       1.jpg
+        ¦       scheda.pdf
+        ¦       
+        +---sapientia
+        ¦       1.jpg
+        ¦       scheda.pdf
+        ¦       
+        +---vaniglia-nera
+        ¦       scheda.pdf
+        ¦       vaniglia-nera.jpg
+        ¦       
+        +---vigna-rossa
+                1.jpg
+                scheda.pdf
+                
