@@ -24,7 +24,7 @@
     .headline{font-size:clamp(28px,4vw,44px); line-height:1.1; font-weight:800; letter-spacing:.2px}
     .sub{margin-top:14px; color:var(--muted); font-size:clamp(16px,2vw,18px)}
     .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border-radius:999px; border:1px solid transparent; font-weight:700; box-shadow:var(--shadow); cursor:pointer; transition:.2s}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; border-radius:999px; border:1px solid transparent; font-weight:700; box-shadow:var(--shadow); cursor:pointer; transition:.2s; background:transparent; color:inherit}
     .btn-primary{background:linear-gradient(135deg, var(--accent), #7cc0ff); color:#061021}
     .btn-secondary{background:#1a2237; border-color:#2b3754}
     .btn:hover{transform:translateY(-2px)}
@@ -62,25 +62,23 @@
         <div class="cta">
           <a class="btn btn-primary" href="#collezione">Scopri le fragranze</a>
           <a class="btn btn-secondary" href="offerta.html">Offerta del weekend</a>
+          <a class="btn btn-secondary" href="media/catalogo.pdf" target="_blank" rel="noopener">Catalogo generale (PDF)</a>
           <a class="btn btn-secondary" target="_blank" href="https://wa.me/393717771328?text=Ciao%20MySenza%2C%20vorrei%20informazioni%20sulla%20collezione%20Demo%20Regali">WhatsApp</a>
         </div>
       </div>
       <div class="hero-card">
         <h3>Come funziona la Demo Regali</h3>
-        <p>1) Scegli la fragranza. 2) Apri la scheda (galleria a 4 quadrati, anche con solo 1.jpg ora). 3) Scrivimi su WhatsApp per ordine o personalizzazione (Etichetta Emozionale™).</p>
+        <p>1) Scegli la fragranza. 2) Apri la scheda (galleria a 4 quadrati). 3) Scrivimi su WhatsApp per ordine o personalizzazione (Etichetta Emozionale™).</p>
       </div>
     </div>
   </header>
 
   <main class="wrap">
     <h2 id="collezione" class="section-title">Collezione</h2>
-    <p class="muted" style="margin-top:-6px">Le card aprono la <em>propria</em> pagina dedicata. I riquadri mancanti in galleria si nascondono da soli.</p>
-
-    <section class="cards" aria-label="Lista fragranze">
+    <section class="cards">
       <article class="card">
         <a href="vigna-rossa.html" class="cover">
-          <img src="media/fragranze/vigna-rossa/1.jpg" alt="Vigna Rossa" loading="lazy" onerror="this.remove();this.nextElementSibling.style.display='grid'">
-          <div class="ph" style="display:none">Apri scheda</div>
+          <img src="media/fragranze/vigna-rossa/1.jpg" alt="Vigna Rossa" loading="lazy">
         </a>
         <div class="body">
           <h4>Vigna Rossa</h4>
@@ -110,8 +108,7 @@
 
       <article class="card">
         <a href="citri-fructus.html" class="cover">
-          <img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus" loading="lazy" onerror="this.remove();this.nextElementSibling.style.display='grid'">
-          <div class="ph" style="display:none">Apri scheda</div>
+          <img src="media/fragranze/citri-fructus/1.jpg" alt="Citri Fructus" loading="lazy">
         </a>
         <div class="body">
           <h4>Citri Fructus</h4>
@@ -126,8 +123,7 @@
 
       <article class="card">
         <a href="lavanda-menta.html" class="cover">
-          <img src="media/fragranze/lavanda-menta/1.jpg" alt="Lavanda e Menta" loading="lazy" onerror="this.remove();this.nextElementSibling.style.display='grid'">
-          <div class="ph" style="display:none">Apri scheda</div>
+          <img src="media/fragranze/lavanda-menta/1.jpg" alt="Lavanda e Menta" loading="lazy">
         </a>
         <div class="body">
           <h4>Lavanda e Menta</h4>
@@ -142,8 +138,7 @@
 
       <article class="card">
         <a href="sapientia.html" class="cover">
-          <img src="media/fragranze/sapientia/1.jpg" alt="Sapientia" loading="lazy" onerror="this.remove();this.nextElementSibling.style.display='grid'">
-          <div class="ph" style="display:none">Apri scheda</div>
+          <img src="media/fragranze/sapientia/1.jpg" alt="Sapientia" loading="lazy">
         </a>
         <div class="body">
           <h4>Sapientia</h4>
@@ -158,8 +153,7 @@
 
       <article class="card">
         <a href="bucato-03-03-fiori.html" class="cover">
-          <img src="media/fragranze/bucato-03-03-fiori/1.jpg" alt="03 – Fiori" loading="lazy" onerror="this.remove();this.nextElementSibling.style.display='grid'">
-          <div class="ph" style="display:none">Apri scheda</div>
+          <img src="media/fragranze/bucato-03-03-fiori/1.jpg" alt="03 – Fiori" loading="lazy">
         </a>
         <div class="body">
           <h4>03 – Fiori (Bucato)</h4>
@@ -171,17 +165,6 @@
           </div>
         </div>
       </article>
-    </section>
-
-    <section id="offerta" style="margin-top:34px">
-      <div class="hero-card" style="display:grid; gap:10px">
-        <h3>Offerta del weekend</h3>
-        <p style="margin:0" class="muted">Esempio: "Se acquisti entro domenica ore 23:59, ricevi in omaggio un secondo profumatore della stessa quantità". Modifica il testo in <code>offerta.html</code>.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="offerta.html">Vedi offerta</a>
-          <a class="btn btn-secondary" target="_blank" href="https://wa.me/393717771328?text=Ciao%20MySenza%2C%20voglio%20attivare%20l%27offerta%20del%20weekend">Attiva via WhatsApp</a>
-        </div>
-      </div>
     </section>
   </main>
 </body>
